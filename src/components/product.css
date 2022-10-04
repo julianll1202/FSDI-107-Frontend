@@ -1,7 +1,7 @@
 .product {
     display: inline-block;
-    width: 270px;
-    height: 350px;
+    width: 230px;
+        height: 450px;
     margin: 10px;
     padding: 10px;
     background-color: lightgrey;
@@ -11,6 +11,9 @@
 
 .product img {
     border-radius: 10px;
+    width: 200p;
+        height: 250px;
+        overflow-x: hidden;
 }
 
 .product .prices {
@@ -32,5 +35,5 @@
 }
 
 .product button {
-    margin-top: 5px;
+    margin-top: 10px;
 }
