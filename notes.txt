@@ -6,5 +6,42 @@
 -- A commit means creating a local copy
 -- Push means to send to server, and pull means to retrieve from it
 
+-- use git init
+-- create repo on github.commit
+-- git remote add origin repo-url
 // Commands //
 -- git init - initialiazes the github, it is done oce by project
+-- git remote add origin repo-url
+-- git remote rm origin, delete origin
+-- git config user.name "your name"
+-- git config user.email "your email"
+
+# run project
+npm start
+
+# to change location
+cd <drag folder here>
+
+# git configuration
+
+# initialized a repo/project
+git init 
+
+
+# add a remote url (server)
+git remote add origin  <URL>
+
+# add the files that should be copied (all)
+git add .
+
+
+# create local copy
+git commit -m "ANY MESSAGE"
+
+
+# push to server
+# first time
+git push -u origin master/main
+
+# future times
+git push
