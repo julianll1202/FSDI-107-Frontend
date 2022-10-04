@@ -1,0 +1,10 @@
+ .quantity-picker button {
+     width: 30px;
+     border-radius: 50%;
+ }
+
+ .quantity-picker label {
+     display: inline-block;
+     margin: 1px 5px;
+     font-weight: bold;
+ }

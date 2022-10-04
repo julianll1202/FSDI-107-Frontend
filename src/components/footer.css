@@ -1,0 +1,13 @@
+
+.footer{
+    padding: 20px 10px 10px 10px;
+    background-color: aqua;
+    display: flex;
+    color: blue;
+    
+}
+
+.footer .name{
+    text-align: right;
+
+}

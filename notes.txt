@@ -1,0 +1,10 @@
+#code .
+#npm start
+
+# Git config #
+-- Git is a version control system
+-- A commit means creating a local copy
+-- Push means to send to server, and pull means to retrieve from it
+
+// Commands //
+-- git init - initialiazes the github, it is done oce by project
