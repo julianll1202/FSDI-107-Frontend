@@ -2,6 +2,7 @@ import logo from "./logo.svg";
 import "./App.css";
 import NavBar from "./components/navBar";
 import Footer from "./components/footer";
+import WishList from "./components/wishlist";
 import Catalog from "./pages/catalog";
 
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -12,8 +13,8 @@ function App() {
     <div>
       <NavBar></NavBar>
 
-      <h1>Hello React!!!</h1>
       <Catalog />
+      <WishList />
       <Footer />
     </div>
   );

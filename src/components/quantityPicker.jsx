@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import './quantityPicker.css';
-const QuantityPicker = () => {
+const QuantityPicker = (props) => {
     //this is a state variable, also called 
     // an inmutable variable
     const [quantity, setQuantity] = useState(1);
@@ -9,15 +9,15 @@ const QuantityPicker = () => {
     // This increases the quantity
     const increase = () => {
         let value = quantity + 1;
-        console.log("btn clicked");
         setQuantity(value);
+        props.onChange(value);
     }
     // Decreases the quantity picker
     const decrease = () =>{
         let value = quantity - 1;
-        console.log("btn clicked");
         if(value > 0 ){
             setQuantity(value);
+            props.onChange(value);
         }
     }
 

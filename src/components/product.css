@@ -11,9 +11,9 @@
 
 .product img {
     border-radius: 10px;
-    width: 200p;
+    width: 200px;
         height: 250px;
-        overflow-x: hidden;
+        
 }
 
 .product .prices {
