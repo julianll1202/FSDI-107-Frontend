@@ -1,0 +1,30 @@
+.admin-page h1{
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.container{
+    display: flex;
+    flex: row;
+    justify-content: space-evenly;
+    gap: 20px;
+    margin-bottom: 10px;
+}
+
+.container .product-section{
+    padding: 5px;
+    background-color: lightgray;
+    border-radius: 10px;
+}
+
+.container h2{
+    text-align: center;
+}
+.container .discount-section{
+    padding: 5px;
+    background-color: lightgray;
+    border-radius: 10px;
+}
+
+/* https://coolors.co/12233e-b0ce27-40abdf-ffffff-4a82b1-bee1f0-ffed39 */

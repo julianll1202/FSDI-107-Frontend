@@ -11,11 +11,11 @@ const WishList = () =>{
     }
 
     const addToList=()=>{
-        let copy=list;
-        copy.push(text);
-        setList(copy);
-        console.log(list);
-        setText("");
+        let copy=list; //create a copy of the list
+        copy.push(text); //add new element to the copy 
+        setList(copy); //overwrite the list with the copy
+        console.log(list); //print the list
+        setText(""); //clear the textbar
     }
     return(
         <div className='wish-list'>
@@ -25,7 +25,7 @@ const WishList = () =>{
                 <button onClick={addToList}>Add</button>
             </div>
             <ul>
-                {list.map(t => <li>{t}</li>)}
+                {list.map(t => <li key={t}>{t}</li>)}
             </ul>
         </div>
     );
