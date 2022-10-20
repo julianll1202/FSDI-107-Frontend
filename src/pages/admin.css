@@ -1,6 +1,8 @@
 .admin-page h1{
     text-align: center;
-    font-weight: bold;
+    font-weight: 900;
+    text-transform: uppercase;
+    text-shadow: 2px 2px #40ABDF;
     margin-bottom: 15px;
 }
 
@@ -14,17 +16,58 @@
 
 .container .product-section{
     padding: 5px;
-    background-color: lightgray;
+    background-color: #BEE1F0;
     border-radius: 10px;
+    width: 80%;
 }
 
 .container h2{
     text-align: center;
+    text-transform: uppercase;
+    font-weight: 900;
 }
 .container .discount-section{
     padding: 5px;
-    background-color: lightgray;
+    background-color: #BEE1F0;
     border-radius: 10px;
 }
 
+.product-section .product-form{
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 5px;
+    font-weight: bold;
+}
+
+.product-form button {
+    width: 30%;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 10px;
+    border-radius: 5px;
+    background-color: #40ABDF;
+    color: #FFFFFF;
+    font-weight: bold;
+    border-color: #40ABDF;
+}
+
+.discount-section .discount-form {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: bold;
+}
+
+.discount-form button {
+    width: 30%;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 10px;
+    border-radius: 5px;
+    background-color: #40ABDF;
+    color: #FFFFFF;
+    font-weight: bold;
+    border-color: #40ABDF;
+}
 /* https://coolors.co/12233e-b0ce27-40abdf-ffffff-4a82b1-bee1f0-ffed39 */

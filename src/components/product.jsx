@@ -22,7 +22,7 @@ const Product = (props) =>{
             <label id='price-lb'>${props.data.price.toFixed(2)}</label>
         </div>
         <QuantityPicker onChange={handleQtyChange}/>
-        <button className='btn btn-primary'>Add</button>
+        <button className='btn btn-primary add-btn'>Add</button>
         </div>
     )
 }
