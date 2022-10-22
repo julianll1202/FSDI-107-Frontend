@@ -1,9 +1,12 @@
 import './product.css';
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import QuantityPicker from './quantityPicker';
+import StoreContext from '../state/storeContext';
+
 
 const Product = (props) =>{
     const [quantity, setQuantity]  = useState(1);
+    const addCart =useContext(StoreContext).addToCart;
     const handleQtyChange = (qty) => {
         console.log("Quantity Picker changed",qty);
         setQuantity(qty);
@@ -12,6 +15,13 @@ const Product = (props) =>{
     const calculateTotal=()=>{
         const total = quantity*props.data.price;
         return total.toFixed(2);
+    }
+
+    const handleAdd = () => {
+        // Add the attribute quantity to the props by creating a copy of its
+        let prodForCart = {...props.data, qty: quantity};
+        // call the context function (addToCart function from StoreContext)
+        addCart(prodForCart); 
     }
     return(
         <div className='product'>
@@ -22,7 +32,7 @@ const Product = (props) =>{
             <label id='price-lb'>${props.data.price.toFixed(2)}</label>
         </div>
         <QuantityPicker onChange={handleQtyChange}/>
-        <button className='btn btn-primary add-btn'>Add</button>
+        <button onClick={handleAdd} className='btn btn-primary add-btn'>Add</button>
         </div>
     )
 }

@@ -8,7 +8,7 @@ const Home = () => {
                 <img src="/images/home-bg2.jpg" />
                 <h2>Welcome to Gamify!</h2>
             </div>
-            <div>
+            <div className="catalog-promo">
                 <h3>Visit our extensive catalog of videogames</h3>
                 <Link className="btn btn-dark" to="/catalog">Check our catalog</Link>
             </div>

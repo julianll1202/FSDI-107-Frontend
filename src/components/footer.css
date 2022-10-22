@@ -1,13 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap');
 
 .footer{
     padding: 20px 10px 10px 10px;
-    background-color: skyblue;
+    background-color: #12233E;
     display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     color: whitesmoke;
-    
+    font-size: 20px;
+    font-family: 'Silkscreen', cursive;
 }
 
-.footer .name{
-    text-align: right;
-
+.footer h3{
+    margin: 10px;
+    
 }

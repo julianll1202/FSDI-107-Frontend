@@ -1,3 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap');
+
 .nav-bar {
-    font-weight: 700;
+    font-weight: 400;
+    font-family: 'Silkscreen', cursive;
+}
+
+.nav-bar .store-name {
+    font-size: 35px;
+    font-weight: bold;
+    text-shadow: 2px 2px #FFED39;
+}
+
+.nav-bar .d-flex{
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: row;
+}
+
+.d-flex .user-welcome{
+    margin-left: 5px;
 }
