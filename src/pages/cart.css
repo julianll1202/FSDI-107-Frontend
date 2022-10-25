@@ -5,22 +5,25 @@
     font-weight: 800;
 }
 
-.cart .product-list {
+.container {
     width: 85%;
-    margin-top: 15px;
-    margin-right: auto;
-    margin-left: auto;
+    margin: 15px auto 15px auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
     background-color: #BEE1F0;
     border-radius: 5px;
-    text-align: left;
     padding: 10px;
 }
 
-.cart .product-list li {
-    list-style-type: none;
+.container .products {
+    flex-grow: 2;
+    margin-left: 0;
+}
+
+.container .total {
+    flex: 1;
     background-color: #FFFFFF;
-    padding: 2px;
     border-radius: 5px;
-    border-left: 5px solid #40ABDF;
-    margin: 5px;
+    padding: 10px;
 }

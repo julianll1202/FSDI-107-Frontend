@@ -19,9 +19,9 @@ import "bootstrap/dist/js/bootstrap.min.js";
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import GlobalContext from "./state/globalContext";
 
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { faCartShopping, faUser } from '@fortawesome/free-solid-svg-icons'
-library.add(faCartShopping, faUser)
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faCartShopping, faUser, faTrash } from '@fortawesome/free-solid-svg-icons';
+library.add(faCartShopping, faUser, faTrash);
 
 
 function App() {

@@ -10,6 +10,18 @@ function NavBar(){
     const user = useContext(StoreContext).user;
     const cart = useContext(StoreContext).cart;
 
+    const getCount = () => {
+        // Initiate count on 0
+        let count = 0;
+        // Travel the array
+        for (let i=0;i<cart.length;i++){
+            // stores the 'i' element of cart
+            let item = cart[i];
+            // sum the quantity of the element to count
+            count += item.qty;
+        }
+        return count;
+    }
     // The component always needs to return something
     return (
         <nav className="navbar navbar-expand-lg bg-primary nav-bar">
@@ -38,7 +50,7 @@ function NavBar(){
                 </ul>
                 <form className="d-flex" role="search">
                     <Link className="btn btn-outline-light" to="/cart">
-                        <FontAwesomeIcon icon="fa-solid fa-cart-shopping" /> <span className="badge bg-danger">{cart.length}</span>
+                        <FontAwesomeIcon icon="fa-solid fa-cart-shopping" /> <span className="badge bg-danger">{getCount()}</span>
                     </Link> 
 
                     <label className="user-welcome btn btn-outline-light">

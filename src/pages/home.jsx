@@ -5,7 +5,7 @@ const Home = () => {
     return( 
         <div className="home-page">
             <div className="welcome-section">
-                <img src="/images/home-bg2.jpg" />
+                <img src="/images/home-bg3.jpg" />
                 <h2>Welcome to Gamify!</h2>
             </div>
             <div className="catalog-promo">

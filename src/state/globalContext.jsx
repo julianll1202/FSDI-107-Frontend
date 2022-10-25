@@ -9,9 +9,26 @@ const GlobalContext = (props) => {
     const addToCart = (prod) => {
         console.log("Adding to cart...");
         // Creates a copy of the array and appending "prod"
-        let copy = [...cart, prod];
-        console.log(copy);
-        setCart(copy);
+        // let copy = [...cart, prod];
+
+        let cartCopy = [...cart];
+        let found = false
+        // Search the array for the product
+        for (let i=0; i < cartCopy.length; i++){
+            let item = cartCopy[i];
+            // If both 
+            if(item._id === prod._id){
+                item.qty += prod.qty;
+                console.log("found");
+                found = true
+            }
+        }
+
+        if(!found){
+            cartCopy.push(prod);
+        }
+        console.log(cartCopy);
+        setCart(cartCopy);
     };
 
     const removeFromCart = () => {
