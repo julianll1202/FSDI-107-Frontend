@@ -15,10 +15,11 @@
 }
 
 .container .product-section{
+    flex: 2;
     padding: 5px;
     background-color: #BEE1F0;
     border-radius: 10px;
-    width: 80%;
+    width: 100%;
 }
 
 .container h2{
@@ -27,6 +28,7 @@
     font-weight: 900;
 }
 .container .discount-section{
+    flex: 1;
     padding: 5px;
     background-color: #BEE1F0;
     border-radius: 10px;
@@ -69,5 +71,9 @@
     color: #FFFFFF;
     font-weight: bold;
     border-color: #40ABDF;
+}
+
+.products-list {
+    font-weight: 400;
 }
 /* https://coolors.co/12233e-b0ce27-40abdf-ffffff-4a82b1-bee1f0-ffed39 */

@@ -1,4 +1,7 @@
+import { useEffect } from "react";
 import { useState } from "react";
+import { useAsyncValue } from "react-router-dom";
+import Dataservice from "../services/dataService";
 import "./admin.css";
 const Admin = ()=>{
     // State variables for the coupons
@@ -8,6 +11,26 @@ const Admin = ()=>{
     // State variables for the products
     const[product, setProduct] = useState({});
     const[productList, setProductList] = useState([]);
+
+    /* use effect calls loadcoupons
+    loadcoupons creates a service instance
+    calls the getcoupons method
+    */
+    useEffect(()=>{
+        loadCoupons();
+        loadProducts();
+    }, []);
+
+    const loadProducts = async () => {
+        let service = new Dataservice();
+        let products = await service.getCatalog();
+        setProductList(products);
+    }
+    const loadCoupons = async () => {
+        let service = new Dataservice();
+        let list = await service.getCoupons();
+        setCouponList(list);
+    }
 
     // Handle change functions
     const handleCouponChange = (e) => {
@@ -30,27 +53,39 @@ const Admin = ()=>{
     }
 
     // Save functions
-    const saveCoupon = () => {
+    const saveCoupon = async() => {
+        // instance of service
+        let service = new Dataservice;
         let copy = {...coupon};
         // changes the discount to be a float instead of a string
         copy.discount = parseFloat(copy.discount);
+        // console log the object
         console.log(copy);
 
+        // send to server
+        let c = await service.saveCoupon(copy);
+        // add to list
         let allCoupons = [...couponList];
         allCoupons.push(copy);
         setCouponList(allCoupons);
-        console.log(allCoupons);
+        console.log(c);
     }
 
-    const saveProduct = () => {
+    const saveProduct = async() => {
+        let service = new Dataservice();
         let copy = {...product};
         // changes the price to be a float instead of a string
-        product.price = parseFloat(copy.price);
+        copy.price = parseFloat(copy.price);
 
+        // removes the path of the image
+        copy.image = copy.image.substring(copy.image.indexOf("th\\")+3);
+
+        // saves the product on sever
+        let p = await service.saveProduct(copy);
         let allProducts = [...productList];
         allProducts.push(copy);
         setProductList(allProducts);
-        console.log(allProducts);
+        console.log(p);
     }
 
     return (
@@ -74,8 +109,8 @@ const Admin = ()=>{
 
                         <button onClick={saveProduct}>Add</button>
 
-                        <ul>
-                            {productList.map(p => <li key={p.title}>{p.title} - ${p.price} - {p.category}</li>)}
+                        <ul className="products-list">
+                            {productList.map((p,index) => <li key={index}>{p.title} - ${p.price} - {p.category}</li>)}
                         </ul>
                     </div>
                 </section>
@@ -91,7 +126,7 @@ const Admin = ()=>{
                     </div>
 
                     <ul>
-                        {couponList.map(c => <li key={c.code}>{c.code} - {c.discount}</li>)}
+                        {couponList.map((c,index) => <li key={index}>{c.code} - {c.discount}</li>)}
                     </ul>
                 </section>
             </div> 
@@ -100,16 +135,3 @@ const Admin = ()=>{
 }
 
 export default Admin;
-
-/*
- - CREATE FORM: 
-        TITLE
-        PRICE
-        IMAGE
-        CATEGORY
- - CREATE STATE FOR THE OBJECT
- - CREATE STATE FOR THE LIST OF PRODUCTS
- - HANDLE CHANGE FUNCTION
- - SAVE FUNCTION
- - DISPLAY LIST
- */

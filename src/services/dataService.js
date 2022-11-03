@@ -1,3 +1,5 @@
+import axios from 'axios';
+
 const catalog = [
   {
     _id: "0",
@@ -51,14 +53,37 @@ const catalog = [
 ];
 
 class Dataservice {
-  getCatalog() {
+  async getCatalog() {
     //Does : call the server to retrieve the data
-    return catalog;
+    // uncomment this next line to work without the server
+    // return catalog;
+
+    // for these next lines the server must be running
+    // call server and get data
+    let res = await axios.get("http://127.0.0.1:5000/api/catalog");
+    return res.data;
+  }
+
+  async saveProduct(product) {
+    let res = await axios.post("http://127.0.0.1:5000/api/catalog", product);
+    return res.data;
   }
 
   saveOrder() {}
 
   validateCouponCode() {}
+
+  async saveCoupon(coupon){
+    // as it is a POST request you need the url and the data you are sending
+    let res = await axios.post("http://127.0.0.1:5000/api/coupons", coupon);
+    return res.data;
+    
+  }
+
+  async getCoupons() {
+    let res = await axios.get("http://127.0.0.1:5000/api/coupons");
+    return res.data;
+  }
 }
 
 export default Dataservice;
